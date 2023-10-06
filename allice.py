@@ -1,6 +1,9 @@
 import pyttsx3                                    
 import datetime                                   
 import speech_recognition as sr                  
+import subprocess
+from pythonpc_control import commands
+
 
 engine = pyttsx3.init('sapi5')                   
 voices = engine.getProperty('voices')            
@@ -51,3 +54,8 @@ if __name__ == '__main__' :
         if 'exit' in query or ('alice' in query and 'sleep' in query):
             speak('for sure, please call me when you need me')
             quit()
+
+
+        if "volume" in query or "brightness" in query or "keyboard lighting" in query:
+            commands(query)
+
