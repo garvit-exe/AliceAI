@@ -4,6 +4,9 @@ import pyautogui
 import sys
 import time
 import screen_brightness_control as sbc
+
+
+
 # Define constants for volume control
 VK_VOLUME_UP = 0xAF
 VK_VOLUME_DOWN = 0xAE
@@ -73,12 +76,18 @@ def commands(query):
 
     # if "keyboard lighting" in query:
     #     if "on" in query:
-    #         time.sleep(2)
-    #         # Simulate the fn+F4 keyboard shortcut to turn on keyboard lighting
-    #         pyautogui.hotkey("fn", "f4")
+           
+
+    #         # time.sleep(2)
+    #         # # Simulate the fn+F4 keyboard shortcut to turn on keyboard lighting
+    #         # pyautogui.press("f4")
     #     elif "off" in query:
+
     #         # Simulate the fn+F4 keyboard shortcut to turn off keyboard lighting
-    #         pyautogui.hotkey("fn", "f4")
+    
+
+if __name__ == "__main__":
+    commands()
 
 # if __name__ == '__main__':
 if len(sys.argv) > 1:
