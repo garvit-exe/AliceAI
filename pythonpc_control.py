@@ -1,6 +1,6 @@
 import os
 import ctypes
-import pyautogui
+# import pyautogui
 import sys
 import time
 import screen_brightness_control as sbc
