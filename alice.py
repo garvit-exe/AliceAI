@@ -5,7 +5,8 @@ import subprocess
 import os
 from pythonpc_control import commands
 # from tclickphoto import click_pic
-from ficopppas import ficoppas
+from ficoppas import ficoppas
+
 import pyautogui
 import time
 
