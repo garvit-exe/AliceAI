@@ -1,7 +1,36 @@
-# Artificial Linguistic Intelligent Computer Entity
+# A.L.I.C.E. - Artificial Linguistic Intelligent Computer Entity
 
-<p>ALICE is an Intelligent Aritificial Voice Assistant</p>
+A.L.I.C.E. is an AI voice assistant designed for PC, capable of performing a wide range of tasks to enhance your computing experience. It was developed by Team 277 as part of the course project exhibition at VIT Bhopal University.
 
-<br/>
+## Features
 
-<p>Official Project of Team 277, consisting of Khyati Tiwari, Riya Gupta, Rohan Gautam, Shashidhar Kittur and Garvit, for the course Project Exhibition - 1 in VIT Bhopal University.</p>
+A.L.I.C.E. is equipped with a variety of functionalities, including:
+
+- Opening applications
+- Taking photos
+- Capturing screenshots
+- Adjusting volume and brightness
+- Copying and pasting files
+- Greeting users
+- Providing weather updates
+- Telling the time
+- Setting reminders
+- And much more!
+
+## Team Members
+
+A.L.I.C.E. was created by a talented team of developers, listed here in alphabetical order:
+
+- Garvit Budhiraja
+- Rohan Gautam
+- Riya Gupta
+- Shashidhar Kittur
+- Khyati Tiwari
+
+## Installation
+
+1. Clone this repository to your local machine.
+2. Install the required dependencies using the following command:
+
+```bash
+npm install
