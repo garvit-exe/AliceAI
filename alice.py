@@ -4,7 +4,7 @@ import speech_recognition as sr
 import subprocess
 import os
 from pythonpc_control import commands
-from tclickphoto import click_pic
+# from tclickphoto import click_pic
 from ficopppas import ficoppas
 import pyautogui
 import time
@@ -68,8 +68,8 @@ if __name__ == '__main__' :
         if "volume" in query or "brightness" in query or "keyboard lighting" in query:
             commands(query)
 
-        if "click photo" in query:
-            click_pic()
+        # if "click photo" in query:
+        #     click_pic()
 
         if "open application" in query:
             pyautogui.hotkey('win','s')
