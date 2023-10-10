@@ -3,6 +3,7 @@ import datetime
 import speech_recognition as sr                  
 from pyautogui import click
 from os import startfile
+import psutil
 
 import requests
 from bs4 import BeautifulSoup
@@ -70,3 +71,7 @@ def khyati(query):
         speak(f'current{search} is {temp}')
         print()
         
+    elif 'battery percentage' in query:
+        battery = psutil.sensors_battery()
+        percentage = battery.percent
+        speak(f'The battery percentage is {percentage}')
