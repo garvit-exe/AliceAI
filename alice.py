@@ -50,8 +50,6 @@ def listen():
         return 'None'  
     return query
 
-# def openApplications(query):
-    # os.system(f"open {query}")
 
 if __name__ == '__main__' :           
     startup()
@@ -87,8 +85,6 @@ if __name__ == '__main__' :
 
       
 
-
-        
     
         if "open home" in query:
             time.sleep(1)
@@ -280,16 +276,6 @@ if __name__ == '__main__' :
             
 
 
-        # if "search" in query:
-        #     time.sleep(1)
-        #     with pyautogui.hold('shift'):
-        #         time.sleep(1)
-        #         pyautogui.press(['tab','tab','tab'])
-               
-
-            # or "new volume s" "s drive"
-            # or "windows" or "c drive"
-            # or "open one drive"
         
             
             
