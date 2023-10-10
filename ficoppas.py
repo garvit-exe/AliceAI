@@ -8,8 +8,4 @@ def ficoppas(query):
     pyautogui.hotkey('shift','tab')
     time.sleep(1)
     pyautogui.press('h')
-    # 
-    # pyautogui.keyUp('tab')
-    # time.sleep(1)
-    # pyautogui.keyUp('shift')
-    # time.sleep(1)
+  

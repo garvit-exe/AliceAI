@@ -4,7 +4,6 @@ import speech_recognition as sr
 import subprocess
 import os
 from pythonpc_control import commands
-# from tclickphoto import click_pic
 from ficoppas import ficoppas
 from automation import youtube, WhatsAppMsg, WhatsAppVoiceCall, WhatsAppVideoCall, WhatsAppVoiceRecording, SearchMusic, OpenPlaylist, SpotifyAuto, ChromeAuto
 from khyati import khyati
@@ -53,8 +52,6 @@ def listen():
         return 'None'  
     return query
 
-# def openApplications(query):
-    # os.system(f"open {query}")
 
 if __name__ == '__main__' :           
     startup()
@@ -131,12 +128,6 @@ if __name__ == '__main__' :
         if "volume" in query or "brightness" in query or "keyboard lighting" in query or "shutdown" in query or "sleep" in query or "restart" in query or "sign out" in query or "open application" in query:
             commands(query)
 
-        # if "click photo" in query:
-        #     click_pic()
-
-            
-
-
         # Shashidhar's Section
         if  "files" in query:
             ficoppas(query)
@@ -163,8 +154,6 @@ if __name__ == '__main__' :
            pyautogui.keyUp('d')
            pyautogui.keyDown('enter')
            pyautogui.keyUp('enter')
-         
-           print("over")
         
         if "open downloads" in query:
            time.sleep(1)
@@ -237,19 +226,19 @@ if __name__ == '__main__' :
             pyautogui.press('enter')
 
         if "search" in query:
-                time.sleep(1)
-                pyautogui.keyDown('shift')
-                time.sleep(1)
-                pyautogui.press('tab',presses=3)
-                time.sleep(1)
-                pyautogui.keyUp('shift')
-                time.sleep(1)
-                query = query.replace('search', " ")
-                pyautogui.write(query)
-                time.sleep(5)
-                pyautogui.press('tab',presses=4)
-                pyautogui.press('down')
-                pyautogui.press('up')
+            time.sleep(1)
+            pyautogui.keyDown('shift')
+            time.sleep(1)
+            pyautogui.press('tab',presses=3)
+            time.sleep(1)
+            pyautogui.keyUp('shift')
+            time.sleep(1)
+            query = query.replace('search', " ")
+            pyautogui.write(query)
+            time.sleep(5)
+            pyautogui.press('tab',presses=4)
+            pyautogui.press('down')
+            pyautogui.press('up')
 
         if "open" in query:
             pyautogui.press('enter')
@@ -281,14 +270,3 @@ if __name__ == '__main__' :
         if "close" in query:
             pyautogui.hotkey('alt','f4')
 
-        # if "search" in query:
-        #     time.sleep(1)
-        #     with pyautogui.hold('shift'):
-        #         time.sleep(1)
-        #         pyautogui.press(['tab','tab','tab'])
-               
-
-            # or "new volume s" "s drive"
-            # or "windows" or "c drive"
-            # or "open one drive"
-        
