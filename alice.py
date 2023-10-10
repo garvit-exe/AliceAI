@@ -50,8 +50,8 @@ def listen():
         return 'None'  
     return query
 
-def openApplications(query):
-    os.system(f"open {query}")
+# def openApplications(query):
+    # os.system(f"open {query}")
 
 if __name__ == '__main__' :           
     startup()
