@@ -42,11 +42,6 @@ def listen():
 
 
 def khyati(query):
-    # query = listen().lower()
-    # if 'alice' in query:
-    #     speak('ALICE is a Virtual Assistant technology based on Artificial Intelligence. It uses the device’s mic to receive voice requests, process them, and send responses via the speaker. It is a combination of different technologies like Voice Interaction, Natural Language Processing and Voice Analysis.')        
-    # elif 'exit' in query or ('alice' in query and 'sleep' in query):
-    #     speak('for sure, please call me when you need me')
         
     if 'internet speed' in query:
         import speedtest
