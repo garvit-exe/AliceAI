@@ -6,14 +6,17 @@ import os
 from pythonpc_control import commands
 # from tclickphoto import click_pic
 from ficoppas import ficoppas
+from automation import youtube, WhatsAppMsg, WhatsAppVoiceCall, WhatsAppVideoCall, WhatsAppVoiceRecording, SearchMusic, OpenPlaylist, SpotifyAuto, ChromeAuto
+from khyati import khyati
 
 import pyautogui
 import time
 
-
-engine = pyttsx3.init('sapi5')                   
+engine = pyttsx3.init('sapi5')
+# engine.setProperty('rate', 170)
+# engine.setProperty('volume', 2.0)               
 voices = engine.getProperty('voices')            
-engine.setProperty('voice',voices[1].id)        
+engine.setProperty('voice',voices[1].id)      
 
 def speak(audio):                           
     engine.say(audio)
@@ -61,34 +64,82 @@ if __name__ == '__main__' :
         if 'alice' in query and 'introduce' in query:
             speak("Sure, Hi, I am Alice, short for Artificial Linguistic Intelligent Computer Entity. I am an advanced AI voice assistant designed to understand and respond to human language. I have been developed by Team two seventy seven of VIT Bhopal University for the course Project Exhibition 1. You can interact with me by asking questions, seeking information, requesting assistance with various tasks, or simply engaging in a conversation. I'm here to provide helpful and informative responses to the best of my abilities.")     
         
-        if 'exit' in query or ('alice' in query and 'sleep' in query):
+        elif 'exit' in query or ('alice' in query and 'sleep' in query):
             speak('for sure, please call me when you need me')
             quit()
 
 
-        if "volume" in query or "brightness" in query or "keyboard lighting" in query:
+        # Riya's Section
+        elif 'youtube' in query:
+            youtube(query)
+            
+        elif 'whatsapp message' in query:
+            name = query.replace("send whatsapp","")
+            name = name.replace("message ","")
+            name = name.replace("to ","")
+            Name = str(name)
+            speak("what is the message for {name}")
+            MSG = listen()
+            MSG = str(MSG)
+            WhatsAppMsg(Name,MSG)
+
+        elif 'voice call' in query :
+            name = query.replace("whatsapp voice","")
+            name = name.replace("call","")
+            name = name.replace("to","")
+            Name = str(name)
+            speak("calling to {name}")
+            WhatsAppVoiceCall(name)
+            
+        elif 'video call' in query:
+            name = query.replace("whatsapp video","")
+            name = name.replace("call","")
+            name = name.replace("to","")
+            Name = str(name)
+            speak("calling to {name}")
+            WhatsAppVideoCall(name)
+            
+        elif 'voice recording' in query:
+            name = query.replace("send whatsapp voice ","")
+            name = name.replace("recording","")
+            name = name.replace("to","")
+            Name = str(name)
+            speak("calling to {name}")
+            WhatsAppVideoCall(name)
+            
+            
+        elif 'chrome ' in query:
+            ChromeAuto(query)
+        
+        elif  'find song ' in query:
+            name = query.replace("find song","")
+            Name = str(name)
+            SearchMusic(name)
+            
+        elif 'open playlist' in query:
+            name = query.replace("open playlist","")
+            Name = str(name)
+            OpenPlaylist(name)
+            
+        elif 'spotify' in query:
+            SpotifyAuto(query)
+            
+        # Khyati's Section
+        khyati(query)
+        
+        # Garvit's Section
+        if "volume" in query or "brightness" in query or "keyboard lighting" in query or "shutdown" in query or "sleep" in query or "restart" in query or "sign out" in query or "open application" in query:
             commands(query)
 
         # if "click photo" in query:
         #     click_pic()
 
-        if "open application" in query:
-            pyautogui.hotkey('win','s')
-            query=query.replace("open application","")
-            time.sleep(1)
-            pyautogui.write(query)   
-            pyautogui.press('enter')        
+            
 
 
-    #    FILES CONTROL
-
+        # Shashidhar's Section
         if  "files" in query:
             ficoppas(query)
-
-      
-
-
-        
     
         if "open home" in query:
             time.sleep(1)
@@ -96,8 +147,6 @@ if __name__ == '__main__' :
             pyautogui.press('enter')
             time.sleep(1)
             
-                
-
         if "open gallery" in query:
             time.sleep(1)
             pyautogui.press('g')
@@ -228,57 +277,9 @@ if __name__ == '__main__' :
         if "back" in query:
             pyautogui.press('backspace')
         
-        
-        
         # closes window
         if "close" in query:
             pyautogui.hotkey('alt','f4')
-
-
-        #  pc shutdown sleep restart signout
-        if "shutdown" in query:
-            pyautogui.hotkey('win','x')
-            time.sleep(1)
-            pyautogui.press('up',presses=2)
-            pyautogui.press('enter')
-            pyautogui.press('up',presses=2)
-            pyautogui.press('enter')
-        if "sleep" in query:
-            pyautogui.hotkey('win','x')
-            time.sleep(1)
-            pyautogui.press('up',presses=2)
-            pyautogui.press('enter')
-            pyautogui.press('down')
-            pyautogui.press('enter')
-        if "restart" in query:
-            pyautogui.hotkey('win','x')
-            time.sleep(1)
-            pyautogui.press('up',presses=2)
-            pyautogui.press('enter')
-            pyautogui.press('up')
-            pyautogui.press('enter')
-        if "sign out" in query:
-            pyautogui.hotkey('win','x')
-            time.sleep(1)
-            pyautogui.press('up',presses=2)
-            pyautogui.press('enter',presses=2)
-            
-
-
-
-            
-            
-
-
-        
-
-
-        
-
-
-        
-            
-
 
         # if "search" in query:
         #     time.sleep(1)
@@ -291,6 +292,3 @@ if __name__ == '__main__' :
             # or "windows" or "c drive"
             # or "open one drive"
         
-            
-            
-    

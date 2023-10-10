@@ -40,23 +40,20 @@ def listen():
 
 
 
-while True:
-    query = listen().lower()
-    if 'alice' in query:
-        speak('ALICE is a Virtual Assistant technology based on Artificial Intelligence. It uses the device’s mic to receive voice requests, process them, and send responses via the speaker. It is a combination of different technologies like Voice Interaction, Natural Language Processing and Voice Analysis.')        
-    elif 'exit' in query or ('alice' in query and 'sleep' in query):
-        speak('for sure, please call me when you need me')
+def khyati(query):
+    # query = listen().lower()
+    # if 'alice' in query:
+    #     speak('ALICE is a Virtual Assistant technology based on Artificial Intelligence. It uses the device’s mic to receive voice requests, process them, and send responses via the speaker. It is a combination of different technologies like Voice Interaction, Natural Language Processing and Voice Analysis.')        
+    # elif 'exit' in query or ('alice' in query and 'sleep' in query):
+    #     speak('for sure, please call me when you need me')
         
-    elif 'internet speed' in query:
+    if 'internet speed' in query:
         import speedtest
         st = speedtest.Speedtest()
         dl = st.download()
         up = st.upload()
         speak(f'The download speed is : {dl} and the upload speed is : {up}')
         
-
-
-            
     elif 'wikipedia' in query:
         speak("Searching Wikipedia...")
         query = query.replace("wikipedia","")
@@ -73,9 +70,3 @@ while True:
         speak(f'current{search} is {temp}')
         print()
         
-        
-        
-        quit()
-        
-        
-    
