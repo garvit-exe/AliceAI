@@ -1,6 +1,7 @@
 # import pyautogui
 import os
 import ctypes
+import pyautogui
 import sys
 import time
 import screen_brightness_control as sbc
@@ -53,11 +54,42 @@ def commands(query):
                   print(sbc.get_brightness())  
 
 
+    if "shutdown" in query:
+        pyautogui.hotkey('win','x')
+        time.sleep(1)
+        pyautogui.press('up',presses=2)
+        pyautogui.press('enter')
+        pyautogui.press('up',presses=2)
+        pyautogui.press('enter')
+        
+    if "sleep" in query:
+        pyautogui.hotkey('win','x')
+        time.sleep(1)
+        pyautogui.press('up',presses=2)
+        pyautogui.press('enter')
+        pyautogui.press('down')
+        pyautogui.press('enter')
 
-    
+    if "restart" in query:
+        pyautogui.hotkey('win','x')
+        time.sleep(1)
+        pyautogui.press('up',presses=2)
+        pyautogui.press('enter')
+        pyautogui.press('up')
+        pyautogui.press('enter')
+        
+    if "sign out" in query:
+        pyautogui.hotkey('win','x')
+        time.sleep(1)
+        pyautogui.press('up',presses=2)
+        pyautogui.press('enter',presses=2)
 
-if __name__ == "__main__":
-    commands()
+    if "open application" in query:
+            pyautogui.hotkey('win','s')
+            query=query.replace("open application","")
+            time.sleep(1)
+            pyautogui.write(query)   
+            pyautogui.press('enter')    
 
 
 if len(sys.argv) > 1:
