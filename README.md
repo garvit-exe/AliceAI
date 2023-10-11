@@ -21,11 +21,11 @@ A.L.I.C.E. is equipped with a variety of functionalities, including:
 
 A.L.I.C.E. was created by a talented team of developers, listed here in alphabetical order:
 
+- Garvit
 - Khyati Tiwari
 - Riya Gupta
 - Rohan Gautam
 - Shashidhar Kittur
-- Garvit
 
 ## Installation
 
