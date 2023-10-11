@@ -51,7 +51,12 @@ def commands(query):
 
                   sbc.set_brightness(20)
               
-                  print(sbc.get_brightness())  
+                  print(sbc.get_brightness())
+
+        elif "set brightness to" in query:
+            query = query.replace("set brightness to ", "")
+            sbc.set_brightness(query)
+             
 
 
     if "shutdown" in query:
