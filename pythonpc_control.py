@@ -16,41 +16,34 @@ VK_VOLUME_DOWN = 0xAE
 DISPLAY_BRIGHTNESS = -1  # Use -1 to indicate the primary display
 
 def commands(query):
+
     query = query.lower()
 
     if "volume" in query:
+
         if "increase" in query:
             ctypes.windll.user32.keybd_event(VK_VOLUME_UP, 0, 0, 0)
             ctypes.windll.user32.keybd_event(VK_VOLUME_UP, 0, 2, 0)
+
         elif "decrease" in query:
             ctypes.windll.user32.keybd_event(VK_VOLUME_DOWN, 0, 0, 0)
             ctypes.windll.user32.keybd_event(VK_VOLUME_DOWN, 0, 2, 0)
 
-    if "brightness" in query:
-        if "increase" in query:
- 
-             sbc.set_brightness(100)
-              
-             print(sbc.get_brightness())
-           
-             if "slightly" in query:
 
+    if "brightness" in query:
+
+        if "increase" in query:
+             sbc.set_brightness(100)
+             print(sbc.get_brightness())
+             if "slightly" in query:
                   sbc.set_brightness(70)
-              
                   print(sbc.get_brightness())            
 
-
         elif "decrease" in query:
-    
              sbc.set_brightness(0)
-              
              print(sbc.get_brightness())
-
-
              if "slightly" in query:
-
                   sbc.set_brightness(20)
-              
                   print(sbc.get_brightness())
 
         elif "set brightness to" in query:
@@ -90,11 +83,11 @@ def commands(query):
         pyautogui.press('enter',presses=2)
 
     if "open application" in query:
-            pyautogui.hotkey('win','s')
-            query=query.replace("open application ","")
-            time.sleep(1)
-            pyautogui.write(query)   
-            pyautogui.press('enter')    
+        pyautogui.hotkey('win','s')
+        query=query.replace("open application ","")
+        time.sleep(1)
+        pyautogui.write(query)   
+        pyautogui.press('enter')    
 
 
 if len(sys.argv) > 1:
