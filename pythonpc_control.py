@@ -86,7 +86,7 @@ def commands(query):
 
     if "open application" in query:
             pyautogui.hotkey('win','s')
-            query=query.replace("open application","")
+            query=query.replace("open application ","")
             time.sleep(1)
             pyautogui.write(query)   
             pyautogui.press('enter')    
