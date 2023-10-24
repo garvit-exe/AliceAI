@@ -33,4 +33,4 @@ A.L.I.C.E. was created by a talented team of developers, listed here in alphabet
 2. Install the required dependencies using the following command:
 
 ```bash
-npm install
+pip3 install aliceai
