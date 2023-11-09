@@ -22,15 +22,7 @@ A.L.I.C.E. is equipped with a variety of functionalities, including:
 A.L.I.C.E. was created by a talented team of developers, listed here in alphabetical order:
 
 - Garvit
-- Khyati Tiwari
-- Riya Gupta
-- Rohan Gautam
 - Shashidhar Kittur
-
-## Installation
-
-1. Clone this repository to your local machine.
-2. Install the required dependencies using the following command:
-
-```bash
-pip3 install aliceai
+- Rohan Gautam
+- Riya Gupta
+- Khyati Tiwari
