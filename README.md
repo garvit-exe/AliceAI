@@ -19,7 +19,7 @@ A.L.I.C.E. is equipped with a variety of functionalities, including:
 
 ## Team Members
 
-A.L.I.C.E. was created by a talented team of developers, listed here in alphabetical order:
+A.L.I.C.E. was created by a talented team of developers, listed here:
 
 - Garvit
 - Shashidhar Kittur
