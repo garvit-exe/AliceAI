@@ -18,8 +18,8 @@ A.L.I.C.E. comes equipped with a variety of functionalities, including:
 
 A.L.I.C.E. was brought to life by a dedicated team of developers:
 
-- **Garvit**
-- **Shashidhar Kittur**
-- **Rohan Gautam**
-- **Riya Gupta**
-- **Khyati Tiwari**
+- [**Garvit**](https://github.com/garvit-exe)
+- [**Shashidhar Kittur**](https://github.com/shashidhar-kittur)
+- [**Rohan Gautam**](https://github.com/Rohan-Gautam)
+- [**Riya Gupta**](https://github.com/Riya922003)
+- [**Khyati Tiwari**](https://github.com/khyahahati)
