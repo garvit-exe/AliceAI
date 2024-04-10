@@ -1,6 +1,8 @@
 # A.L.I.C.E. - Artificial Linguistic Intelligent Computer Entity
 
+<p>
 A.L.I.C.E. is an AI voice assistant designed for PCs, offering a wide range of features to enhance your computing experience. It was developed by Team 277 as part of a course project exhibition at VIT Bhopal University.
+</p>
 
 ## Key Features
 
