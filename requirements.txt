@@ -178,5 +178,5 @@ screen-brightness-control==0.22.1
 soupsieve==2.5
 SpeechRecognition==3.10.0
 speedtest==0.0.1
-urllib3==2.0.6
+urllib3==2.0.7
 wikipedia==1.4.0
