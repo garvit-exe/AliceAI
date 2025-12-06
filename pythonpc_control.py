@@ -85,6 +85,8 @@ def commands(query):
     if "open application" in query:
         pyautogui.hotkey('win','s')
         query=query.replace("open application ","")
+        # Sanitize input to prevent injection of special characters
+        query = ''.join(c for c in query if c.isalnum() or c.isspace())
         time.sleep(1)
         pyautogui.write(query)   
         pyautogui.press('enter')    

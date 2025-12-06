@@ -234,6 +234,8 @@ if __name__ == '__main__' :
             pyautogui.keyUp('shift')
             time.sleep(1)
             query = query.replace('search', " ")
+            # Sanitize input to prevent injection of special characters
+            query = ''.join(c for c in query if c.isalnum() or c.isspace())
             pyautogui.write(query)
             time.sleep(5)
             pyautogui.press('tab',presses=4)

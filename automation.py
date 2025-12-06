@@ -10,6 +10,13 @@ from keyboard import write
 from pyautogui import click
 from os import startfile
 
+def sanitize_input(text):
+    """Sanitize user input to prevent injection attacks."""
+    if text is None:
+        return ""
+    # Allow alphanumeric characters, spaces, and basic punctuation
+    return ''.join(c for c in str(text) if c.isalnum() or c.isspace() or c in '.,!?-')
+
 engine = pyttsx3.init('sapi5')
 engine.setProperty('rate', 170)
 engine.setProperty('volume', 2.0)               
@@ -40,7 +47,7 @@ def listen():
 def youtube(command):
     query = str(command)
     if 'open' in query:
-        webbrowser.open("www.youtube.com")
+        webbrowser.open("https://www.youtube.com")
     elif 'pause' in query:
         press('space bar')
     elif 'resume' in query:
@@ -68,7 +75,7 @@ def youtube(command):
     elif 'search' in query:
         click(x=1735, y=28)
         search = listen()
-        write(search)
+        write(sanitize_input(search))
         time.sleep(1)
         press('enter')
         
@@ -77,20 +84,20 @@ def WhatsAppMsg(name,message):
     time.sleep(10)
     press_and_release('ctrl + f')
     time.sleep(1)
-    write(name)
+    write(sanitize_input(name))
     pyautogui.hotkey('pgdn')
     pyautogui.hotkey('enter')
     time.sleep(2)
     
-    write(message)
-    press('enter')       
+    write(sanitize_input(message))
+    press('enter')
 
 def WhatsAppVoiceCall(name):
     startfile("C:\\Users\\rajee\\OneDrive\\Desktop\\WhatsApp - Shortcut.lnk")
     time.sleep(10)
     press_and_release('ctrl + f')
     time.sleep(1)
-    write(name)
+    write(sanitize_input(name))
     pyautogui.hotkey('pgdn')
     pyautogui.hotkey('enter')
     time.sleep(2)
@@ -103,7 +110,7 @@ def WhatsAppVideoCall(name):
     time.sleep(10)
     press_and_release('ctrl + f')
     time.sleep(1)
-    write(name)
+    write(sanitize_input(name))
     pyautogui.hotkey('pgdn')
     pyautogui.hotkey('enter')
     time.sleep(2)
@@ -116,7 +123,7 @@ def WhatsAppVoiceRecording(name,t):
     time.sleep(10)
     press_and_release('ctrl + f')
     time.sleep(1)
-    write(name)
+    write(sanitize_input(name))
     pyautogui.hotkey('pgdn')
     pyautogui.hotkey('enter')
     time.sleep(2)
@@ -131,7 +138,7 @@ def SearchMusic(name):
     time.sleep(5)
     press_and_release('ctrl + L')
     time.sleep(2)
-    write(name)
+    write(sanitize_input(name))
     press('enter')
     time.sleep(5)
     click(x=751, y=629)
@@ -141,7 +148,7 @@ def OpenPlaylist(name):
     time.sleep(5)
     press_and_release('ctrl + L')
     time.sleep(2)
-    write(name)
+    write(sanitize_input(name))
     press('enter')
     time.sleep(5)
     click(x=751, y=629)
