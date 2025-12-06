@@ -165,7 +165,7 @@ def SpotifyAuto(command):
 def ChromeAuto(command):
     query = str(command)
     if 'open' in query:
-        startfile("C:\\Program Files\\Google\Chrome\\Application\\chrome.exe")
+        startfile(r"C:\Program Files\Google\Chrome\Application\chrome.exe")
         time.sleep(2)
         click(x=905, y=480)
     elif 'new window' in query:

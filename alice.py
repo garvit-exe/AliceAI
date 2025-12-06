@@ -5,7 +5,7 @@ import subprocess
 import os
 from pythonpc_control import commands
 from ficoppas import ficoppas
-from automation import youtube, WhatsAppMsg, WhatsAppVoiceCall, WhatsAppVideoCall, WhatsAppVoiceRecording, SearchMusic, OpenPlaylist, SpotifyAuto, ChromeAuto
+from automation import youtube, WhatsAppMsg, WhatsAppVoiceCall, WhatsAppVideoCall, WhatsAppVoiceRecording, SearchMusic, OpenPlaylist, SpotifyAuto, ChromeAuto, sanitize_input
 from khyati import khyati
 
 import pyautogui
@@ -235,8 +235,7 @@ if __name__ == '__main__' :
             time.sleep(1)
             query = query.replace('search', " ")
             # Sanitize input to prevent injection of special characters
-            query = ''.join(c for c in query if c.isalnum() or c.isspace())
-            pyautogui.write(query)
+            pyautogui.write(sanitize_input(query))
             time.sleep(5)
             pyautogui.press('tab',presses=4)
             pyautogui.press('down')

@@ -6,6 +6,13 @@ import sys
 import time
 import screen_brightness_control as sbc
 
+def sanitize_input(text):
+    """Sanitize user input to prevent injection attacks."""
+    if text is None:
+        return ""
+    # Allow alphanumeric characters, spaces, and basic punctuation
+    return ''.join(c for c in str(text) if c.isalnum() or c.isspace() or c in '.,!?-')
+
 
 
 # Define constants for volume control
@@ -86,9 +93,8 @@ def commands(query):
         pyautogui.hotkey('win','s')
         query=query.replace("open application ","")
         # Sanitize input to prevent injection of special characters
-        query = ''.join(c for c in query if c.isalnum() or c.isspace())
         time.sleep(1)
-        pyautogui.write(query)   
+        pyautogui.write(sanitize_input(query))   
         pyautogui.press('enter')    
 
 
